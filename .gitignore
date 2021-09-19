@@ -1,2 +1,4 @@
 venv
 .idea
+task.txt
+backend/db.sqlite3
