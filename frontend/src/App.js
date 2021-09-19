@@ -1,5 +1,6 @@
 import './App.css';
 import React from 'react';
+import UserList from './components/Users.js'
 
 
 class App extends React.Component {
@@ -10,35 +11,29 @@ class App extends React.Component {
         }
     }
 
+   componentDidMount() {
+       const users = [
+           {
+               'username': 'KonTroAll',
+               'first_name': 'Konstantin',
+               'last_name': 'Troshenkin',
+               'email': 'kostya@98295@mail.ru'
+           },
+       ]
+       this.setState(
+            {
+                'users': users
+            }
+       )
+    }
     render () {
         return (
             <div>
-                Main App
+                <UserList users={this.state.users} />
             </div>
         )
     }
 }
 export default App;
 
-//function App() {
-//  return (
-//    <div className="App">
-//      <header className="App-header">
-//        <img src={logo} className="App-logo" alt="logo" />
-//        <p>
-//          Edit <code>src/App.js</code> and save to reload.
-//        </p>
-//        <a
-//          className="App-link"
-//          href="https://reactjs.org"
-//          target="_blank"
-//          rel="noopener noreferrer"
-//        >
-//          Learn React
-//        </a>
-//      </header>
-//    </div>
-//  );
-//}
-//
-//export default App;
+
